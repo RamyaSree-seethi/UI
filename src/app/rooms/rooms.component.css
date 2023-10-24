@@ -1,0 +1,75 @@
+.image{
+  width: 250px;
+  height: 180px;
+}
+.tab{
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 10px;
+  display: center;
+  background-color:transparent;
+  border: 2px;
+  border-radius: 2px solid black;
+  width: 100%;
+}
+/* In your component's CSS file (e.g., room-list.component.css) */
+.search-container {
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Vertically center items */
+  gap: 10px; /* Spacing between items */
+}
+
+/* Optionally, you can adjust input and button styles as needed */
+input[type="number"],
+button {
+  padding: 5px 10px; /* Adjust padding for input and button */
+  font-size: 10px; /* Adjust font size */
+}
+
+.text{
+  color: white;
+}
+
+
+/* Add this CSS to your styles.css or component-specific CSS */
+
+/* Style the table */
+.table {
+margin-top: 20px;
+border-collapse: collapse; /* Collapse the borders so they don't double up */
+width: 100%;
+}
+
+/* Style the table headers */
+.table thead th {
+text-align: center;
+
+color: rgb(8, 7, 7);
+border: 1px solid #dee2e6; /* Add a border to header cells */
+padding: 8px;
+}
+
+/* Style the table rows */
+.table tbody tr {
+text-align: center;
+border: 1px solid #dee2e6; /* Add a border to rows */
+}
+
+/* Style the table cells */
+.table tbody td {
+padding: 8px;
+border: 1px solid #dee2e6; /* Add a border to cells */
+}
+
+/* Style the buttons in the table */
+.table .btn {
+padding: 5px 10px;
+margin-right: 5px;
+font-size: 14px; /* Adjust button font size */
+}
+
+/* Style the room images */
+.image {
+max-width:600px; /* Set a maximum width for the images */
+height: auto;
+}

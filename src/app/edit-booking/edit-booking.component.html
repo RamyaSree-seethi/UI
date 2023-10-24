@@ -1,0 +1,26 @@
+
+<div class="register-card" style="background-color:rgb(243, 233, 233);;
+box-shadow: 10px 10px 5px 5px rgb(231, 243, 248);">
+  <div class="profile-img-card">
+    <img class="profile-img-card" src="assets/img/hotelImage.jfif" />
+  </div>
+  <div class="profile-name-card">
+   <h2 class="text-center">Modify Booking Details</h2>
+  </div>
+  <form class="form-signup" (ngSubmit)="onSubmit()">
+   
+    <label for="roomId">RoomNo</label>
+    <input type="number" id="roomId" name="roomId" [(ngModel)]="booking.roomId" required readonly>
+
+    <label for="checkInDate">Check-IN-Date</label>
+    <input type="datetime-local" id="checkInDate" name="checkInDate" [(ngModel)]="booking.checkInDate" required (change)="onCheckInDateChange()">
+    <label for="checkOutDate">Check-out-Date</label>
+    <input type="datetime-local" id="checkOutDate" name="checkOutDate" [(ngModel)]="booking.checkOutDate" required (change)="onCheckOutDateChange()">
+    <div>
+  Total Price: {{ totalPrice }}
+    </div>
+   
+<button type="submit" class="btn btn-success">Save</button>
+  </form>
+  
+</div>

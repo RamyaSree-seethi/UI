@@ -1,0 +1,44 @@
+<div class="login-card" style="background-color: rgb(243, 233, 233);
+ box-shadow: 10px 10px 5px 5px rgb(231, 243, 248);">
+  <img class="profile-img-card" src="assets/img/hotelImage.jfif" />
+  <p class="profile-name-card"></p>
+  <form [formGroup]="loginForm" class="form-signin">
+    <span class="reauth-email"></span>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      required
+      placeholder="Email address"
+      autofocus
+      formControlName="email"
+    />
+    <div *ngIf="loginForm.get('email')?.hasError('required') && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
+      Email is required.
+    </div>
+    <div *ngIf="loginForm.get('email')?.hasError('email') && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)">
+      Invalid email format.
+    </div>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      required
+      placeholder="Password"
+      formControlName="password"
+    />
+    <div *ngIf="loginForm.get('password')?.hasError('required') && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+      Password is required.
+    </div>
+    <!-- <div *ngIf="loginForm.get('password')?.hasError('minlength') && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+      Password must be at least 6 characters long.
+    </div> -->
+    <button
+      class="btn btn-primary btn-block btn-lg btn-signin"
+      (click)="Login()"
+    >
+      Sign in
+    </button>
+  </form>
+  <a class="forgot-password" routerLink="/signup">New User ?</a>
+</div>

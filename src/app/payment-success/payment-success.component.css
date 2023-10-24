@@ -1,0 +1,17 @@
+.success-message {
+    text-align: center;
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    padding: 20px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add a shadow */
+  }
+  
+  .success-message h2 {
+    font-size: 24px; /* Heading font size */
+  }
+  
+  .success-message p {
+    font-size: 16px; /* Paragraph font size */
+  }
+  

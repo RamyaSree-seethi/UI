@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<div class="container">
+    <h3 class="text-center my-3">Users</h3>
+    <input
+    type="text"
+    class="form-control mb-3 search-input"
+    placeholder="Search by UserName or PhoneNumber"
+    [(ngModel)]="searchText"
+    (input)="filterUsers()"
+  />
+    <table class="table ">
+        <thead>
+           <tr>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>ConfirmPassword</th>
+            <th>PhoneNumber</th>
+            <th>Delete</th>
+           </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of filteredUsers">
+                <!-- <td>{{user.userId}}</td> -->
+                <td>{{user.userName}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.confirmPassword}}</td>
+                <td>{{user.phoneNumber}}</td>
+                <td>
+                    <button (click)="deleteUser(user)" class="btn btn-link">
+                      <i class="fas fa-trash-alt text-danger"></i>
+                    </button>
+                  </td>    
+            </tr>
+            
+        </tbody>
+    
+    </table>
+</div>

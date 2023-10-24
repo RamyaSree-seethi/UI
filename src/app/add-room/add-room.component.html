@@ -1,0 +1,131 @@
+<div class="container cnt">
+<div class="register-card" style="background-color: rgb(243, 233, 233); box-shadow: 10px 10px 5px 5px rgb(231, 243, 248);">
+    
+    <form (ngSubmit)="submit()"  class="form-signup" [formGroup]="form">
+      <h2>Add Room</h2>
+      <div class="row">
+        <div class="col-sm-10">
+            <select formControlName="roomType" class="form-control select" id="roomType" required>
+            <option value="">Select Room Type</option>
+            <option value="SingleRoom">Single</option>
+            <option value="DoubleRoom">Double</option>
+            <option value="FamilySuite">Family Suite</option>
+            <option value="DeluxeSuite">Deluxe Suite</option>
+          </select>
+        </div>
+      </div>
+       
+          <div formGroupName="facilities">
+            <h6 class="text-center mt-2">Facilities</h6>
+            <!-- <label for="facilities">Facilities</label> -->
+            <label class="checkbox-label">
+              <input type="checkbox" class="form-check-input" id="FreeWifi" formControlName="FreeWifi">
+              Free Wifi
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="form-check-input" id="SingleRoom" formControlName="SingleRoom">
+              SingleRoom
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="form-check-input" id="PrivateBathroom" formControlName="PrivateBathroom">
+             PrivateBathroom
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="form-check-input" id="ComplementaryBreakfast" formControlName="ComplementaryBreakfast">
+               ComplementaryBreakfast
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="form-check-input" id="ComplementaryLunch" formControlName="ComplementaryLunch">
+              ComplementaryLunch
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="form-check-input" id="ComplementaryDinner" formControlName="ComplementaryDinner">
+             ComplementaryDinner
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="form-check-input" id="AC" formControlName="AC">
+              AC
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" class="form-check-input" id="SwimmingPool" formControlName="SwimmingPool">
+              SwimmingPool
+            </label>
+           
+          </div>
+      
+      <div class="row">
+        <div class="col-sm-10">
+          <input
+          formControlName="photoUrl"
+          type="text"
+          class="form-control"
+          id="photoUrl"
+          required
+          placeholder="Photo Url"
+        />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10">
+          <input
+          formControlName="adultsCount"
+          type="number"
+         class="form-control"
+         id="adultsCount"
+         required
+         placeholder="Adults Count"
+         />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10">
+          <input
+
+            formControlName="childCount"
+            type="number"
+            class="form-control"
+            id="childCount"
+            required
+            placeholder="Children"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-10">
+          <input
+            formControlName="price"
+            type="number"
+            class="form-control"
+            id="price"
+            required
+            placeholder="Price"
+          />
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-sm-10">
+          <select formControlName="rating" class="form-control select" id="rating" required>
+            <option [ngValue]="null" disabled selected>Rating</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+          
+        </div>
+      </div> -->
+          
+  
+      <button
+        class="btn btn-primary  btn-signup"
+        type="submit"
+        
+      >
+     AddRoom
+      </button>
+    </form>
+    
+  </div>
+  
+</div>

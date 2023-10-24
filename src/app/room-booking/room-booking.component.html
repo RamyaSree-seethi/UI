@@ -1,0 +1,76 @@
+<div class="register-card">
+    <div class="profile-name-card">Booking Form</div>
+    <form class="form-signup" (ngSubmit)="submit()" [formGroup]="form">
+      <div class="profile-img-card">
+        <img src="assets/img/hotelImage.jfif" alt="Hotel Image">
+      </div>
+      
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="userId">UserId</label>
+            <!-- Update input bindings to use ngModel -->
+<input type="number" id="userId" class="form-control" placeholder="UserId" formControlName="userId" required [(ngModel)]="userId">
+
+          </div>
+          <div class="form-group">
+            <label for="adultsCount">AdultsCount</label>
+            <input type="number" id="adultsCount" class="form-control" 
+            formControlName="adultsCount" required >
+          </div>
+          <div class="form-group">
+            <label for="checkInCount">Check-in Date</label>
+            <input
+            type="date"
+            id="checkInDate"
+            class="form-control"
+            formControlName="checkInDate"
+            required
+          />
+            
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" id="price" class="form-control" formControlName="price" required>
+
+          </div>
+          
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="name">RoomId</label>
+            <input type="number" id="roomId" class="form-control" placeholder="RoomId" 
+            formControlName="roomId" required >
+          </div>
+          <div class="form-group">
+            <label for="childCount">ChildCount</label>
+            <input type="number" id="childCount" class="form-control" 
+            formControlName="childCount" required >
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Check-out Date</label>
+            
+            <input
+            type="date"
+            id="checkOutDate"
+            class="form-control"
+            formControlName="checkOutDate"
+            
+            required
+          />
+          </div>
+          
+    
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-signup">Book Now</button>
+  
+  <!-- Display error message when dates are invalid -->
+  <div *ngIf="datesInvalid" class="text-danger">
+    Check-out date must be greater than check-in date.
+  </div>
+    </form>
+    
+  </div>
+  

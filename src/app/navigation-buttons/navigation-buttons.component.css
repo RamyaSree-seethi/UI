@@ -1,0 +1,34 @@
+/* CSS to style the back button */
+.back-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none; /* Remove the border */
+    background: none; /* Remove the background */
+    font-size: 24px; /* Increase the font size for a larger arrow */
+    color: blue; /* Set the color to blue */
+    cursor: pointer; /* Add a pointer cursor for interactivity */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+    outline: none; /* Remove the outline on focus */
+    transition: color 0.3s; /* Add a color transition for effect */
+  }
+  
+  /* CSS to change the text color on hover */
+  .back-button:hover {
+    color: darkblue; /* Change the color on hover */
+  }
+  
+  /* CSS to style the back text */
+  .back-text {
+    font-size: 16px; /* Adjust the font size of the text */
+    margin-bottom: -35px; /* Decrease the space below the text */
+  }
+  
+  /* CSS to style the left arrow */
+  .left-arrow {
+    font-size: 48px; /* Adjust the font size of the left arrow */
+    margin-top: -2px; /* Decrease the space above the arrow */
+  }
+  

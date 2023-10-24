@@ -1,0 +1,39 @@
+/* CSS for adjusting spacing and positioning */
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+body {
+  margin-left: 20px; /* Adjust the margin value as needed */
+}
+
+.search-options {
+  display: flex;
+  gap: 10px; /* Decreased gap between search options */
+}
+
+.filter-option {
+  /* Moved filter option to the right by using margin-left */
+  margin-left: auto;
+}
+.image{
+  width: 200px;
+  height: 180px;
+}
+.header{
+  margin-bottom: 5px;
+}
+.text{
+  color: white;
+}
+.star-rating {
+  font-family: 'Arial', sans-serif; /* Change to your chosen font */
+  font-size: 24px; /* Adjust the size as needed */
+  margin-top: 0;
+  color: gold;
+}
+.transparent-table {
+  background-color: transparent;
+}

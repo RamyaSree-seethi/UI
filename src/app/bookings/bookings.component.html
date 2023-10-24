@@ -1,0 +1,68 @@
+<div class="container">
+    <h2 class="text-center mt-3">All Bookings</h2>
+    <div class="search-container">
+      <div class="search-options">
+        <!-- User ID Input Field -->
+        <div class="search-option">
+          <label for="userId">User ID:</label>
+          <input type="number" id="userId" [(ngModel)]="searchUserId" class="custom-input">
+        </div>
+        <!-- Room ID Input Field -->
+        <div class="search-option">
+          <label for="roomId">Room No:</label>
+          <input type="number" id="roomId" [(ngModel)]="searchRoomId" class="custom-input">
+        </div>
+        <!-- Check-in Date Input Field -->
+        <div class="search-option">
+          <label for="checkInDate">Check-in Date:</label>
+          <input type="date" id="checkInDate" [(ngModel)]="searchCheckInDate" class="custom-input">
+        </div>
+        <!-- Check-out Date Input Field -->
+        <div class="search-option">
+          <label for="checkOutDate">Check-out Date:</label>
+          <input type="date" id="checkOutDate" [(ngModel)]="searchCheckOutDate" class="custom-input">
+        </div>
+        <!-- Min Price Input Field -->
+        <div class="search-option">
+          <label for="minPrice">Min Price:</label>
+          <input type="number" id="minPrice" [(ngModel)]="minPrice" class="custom-input">
+        </div>
+        <!-- Max Price Input Field -->
+        <div class="search-option">
+          <label for="maxPrice">Max Price:</label>
+          <input type="number" id="maxPrice" [(ngModel)]="maxPrice" class="custom-input">
+        </div>
+        <!-- Combined Search Button -->
+        <div class="search-option">
+          <button class="btn btn-primary search" (click)="search()">Search</button>
+        </div>
+      </div>
+    </div>
+    <table class="table">
+      <thead>
+        <th>UserId</th>
+        <th>RoomNo</th>
+        <th>Check-IN-Date</th>
+        <th>Check-out-Date</th>
+        <th>Price</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of post">
+          <td>{{ b.userId }}</td>
+          <td>{{ b.roomId }}</td>
+          <td>{{ b.checkInDate | date:'dd/MM/yy' }}</td>
+    <td>{{ b.checkOutDate | date:'dd/MM/yy' }}</td>
+          <td>{{ b.price }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="Delete(b.bookingId)">Delete</button>
+          </td>
+          <td>
+            <button class="btn btn-primary" [routerLink]="['/editBooking', b.bookingId]">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

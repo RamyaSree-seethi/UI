@@ -1,0 +1,22 @@
+<!-- refund-success.component.html -->
+
+<div class="container">
+    <h4 class="text-center my-5">Deleted Refunds</h4>
+    <table class="table my-3">
+      <thead>
+        <th>RefundId</th>
+        <th>BookingId</th>
+        <th>Amount</th>
+        <th>RequestDate</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let refund of deletedRefunds">
+          <td>{{ refund.refundId }}</td>
+          <td>{{ refund.bookingId }}</td>
+          <td>{{ refund.amount }}</td>
+          <td>{{ refund.requestDate | date:'dd-MM-yy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

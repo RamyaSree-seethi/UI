@@ -1,0 +1,68 @@
+<div class="register-card" style="background-color:rgb(243, 233, 233);;
+    box-shadow: 10px 10px 5px 5px rgb(231, 243, 248);">
+    <img class="profile-img-card" src="assets/img/hotelImage.jfif" />
+    <p class="profile-name-card"></p>
+      <h4 class="text-center">Edit Profile</h4>
+      <form [formGroup]="profileForm" (ngSubmit)="submitForm()" class="form-signup">
+        <!-- User Name -->
+        <div class="form-group">
+          <label for="userName">User Name:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="userName"
+            formControlName="userName"
+          />
+        </div>
+  
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+          />
+        </div>
+  
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+          />
+        </div>
+  
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+          />
+        </div>
+  
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumber"
+            formControlName="phoneNumber"
+          />
+        </div>
+  
+        <!-- Save Button -->
+        <button type="submit" class="btn btn-signup">Save</button>
+      </form>
+</div>
+    
+
+    

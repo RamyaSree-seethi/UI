@@ -1,0 +1,134 @@
+<div class="container my-5">
+  <h2 class="text-center">List of Available Rooms</h2>
+  <div class="search-container">
+    <div class="search-options">
+      <!-- Adults and Children input fields -->
+      <div class="search-option">
+        <label for="adults">Adults:</label>
+        <input type="number" id="adults" [(ngModel)]="adults">
+      </div>
+      <div class="search-option">
+        <label for="children">Children:</label>
+        <input type="number" id="children" [(ngModel)]="children">
+      </div>
+      <!-- Check-in and Check-out date input fields -->
+      <div class="search-option">
+        <label for="checkInDate">Check-in Date:</label>
+        <input type="date" id="checkInDate" [(ngModel)]="checkInDate">
+      </div>
+      <div class="search-option">
+        <label for="checkOutDate">Check-out Date:</label>
+        <input type="date" id="checkOutDate" [(ngModel)]="checkOutDate">
+      </div>
+      <!-- Search button -->
+      <div class="search-option">
+        <button (click)="searchRooms()" class="btn btn-success">Search</button>
+      </div>
+    </div>
+
+    <!-- Filter button and dropdown (moved to the right) -->
+    <div class="filter-option">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="filterDropdown"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Filter
+      </button>
+      <div class="dropdown-menu" aria-labelledby="filterDropdown">
+        <!-- Filter options -->
+        <a class="dropdown-item" (click)="filterByPrice('lowToHigh')">Low to High Price</a>
+        <a class="dropdown-item" (click)="filterByPrice('highToLow')">High to Low Price</a>
+        <a class="dropdown-item" (click)="filterByRoomType('All')">All</a>
+        <a class="dropdown-item" (click)="filterByRoomType('singleRoom')">Single Room</a>
+        <a class="dropdown-item" (click)="filterByRoomType('DoubleRoom')">Double Room</a>
+        <a class="dropdown-item" (click)="filterByRoomType('familySuite')">Family Suite</a>
+        <a class="dropdown-item" (click)="filterByRoomType('DeluxeSuite')">Deluxe Room</a>
+        <a class="dropdown-item" (click)="filterByRating(1)">1 Star</a>
+        <a class="dropdown-item" (click)="filterByRating(2)">2 Stars</a>
+        <a class="dropdown-item" (click)="filterByRating(3)">3 Stars</a>
+        <a class="dropdown-item" (click)="filterByRating(4)">4 Stars</a>
+        <a class="dropdown-item" (click)="filterByRating(5)">5 Stars</a>
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <table *ngIf="showFilteredData; else totalData" class="table table-hover tab transparent-table" style="background-color: transparent;">
+    <table class="table table-hover tab">
+      <thead class="text-center">
+        <th>RoomNo</th>
+        <th>RoomType</th>
+        <th>Facilities</th>
+        <th>Photo</th>
+        <th>Adults</th>
+        <th>Child</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Action</th>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let r of rooms ">
+          <td>{{r.roomId}}</td>
+          <td>{{r.roomType}}</td>
+          <td>{{r.facilities}}</td>
+          <td><img [src]="r.photoUrl" alt="NoImage found" class="image"></td>
+          <td>{{r.adultsCount}}</td>
+          <td>{{r.childCount}}</td>
+          <td>
+            <ng-container>{{ currencySymbol }}</ng-container>
+            <ng-container>{{ r.price }}</ng-container>
+          </td>
+
+          <td class="star-rating">{{ r.rating | starRating }}</td>
+          <td> <button (click)="bookRoom(r.roomId)" class="btn btn-primary">BookRoom</button></td>
+          <!-- <td><button class="btn btn-danger" (click)="Delete(r.roomId)">Delete</button></td>
+          <td><button class="btn btn-primary"><a [routerLink]="['/edit', r.roomId]"  class="text">Edit</a></button></td> -->
+        </tr>
+      </tbody>
+    </table>
+  </table>
+</div>
+
+<ng-template #totalData>
+  <table class="table table-hover tab transparent-table" style="background-color: transparent;">
+    <thead class="text-center">
+      <th>RoomNo</th>
+      <th>RoomType</th>
+      <th>Facilities</th>
+      <th>Photo</th>
+      <th>Adults</th>
+      <th>Child</th>
+
+      <th>Price</th>
+      
+      <th>Rating</th>
+      <th>Action</th>
+    </thead>
+    <tbody class="text-center">
+      <tr *ngFor="let r of roomDetails">
+        <td>{{r.roomId}}</td>
+        <td>{{r.roomType}}</td>
+        <td>{{r.facilities}}</td>
+        <td><img [src]="r.photoUrl" alt="NoImage found" class="image"></td>
+        <td>{{r.adultsCount}}</td>
+        <td>{{r.childCount}}</td>
+     
+        <td>
+          <ng-container>{{ currencySymbol }}</ng-container>
+          <ng-container>{{ r.price }}</ng-container>
+        </td>
+
+        <td class="star-rating">{{ r.rating | starRating }}</td>
+        <td> <button (click)="bookRoom(r.roomId)" class="btn btn-primary">BookRoom</button></td>
+        <!-- <td><button class="btn btn-danger" (click)="Delete(r.roomId)">Delete</button></td> -->
+        <!-- <td><button class="btn btn-primary">  <a [routerLink]="['/rooms', r.roomId, 'edit']"></a>Book</button></td> -->
+        <!-- <td><button class="btn btn-primary"><a [routerLink]="['/edit', r.roomId]" class="text">Edit</a></button></td> -->
+      </tr>
+    </tbody>
+  </table>
+</ng-template>

@@ -1,0 +1,82 @@
+/* Center the container horizontally */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    width:600px;
+  }
+  
+  /* Style the card */
+  .card {
+    width: 100%; /* Set card width */
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Limit card width if needed */
+  }
+  
+  /* Create a flex container for the two sections */
+  .details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .login-card {
+    max-width: 600px;
+    padding: 40px 40px;
+    background-color: #F7F7F7;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Style the booking details section */
+  .booking-details {
+    flex: 1; /* Let it grow to take available space */
+    padding: 20px;
+  }
+  
+  /* Style the payment details section */
+  .payment-details {
+    flex: 1; /* Let it grow to take available space */
+    padding: 20px;
+  }
+  
+  /* Style form labels */
+  label {
+    font-weight: bold;
+  }
+  
+  /* Style form input fields */
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style buttons */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add space between form controls */
+  .form-group {
+    margin-bottom: 16px;
+  }
+  

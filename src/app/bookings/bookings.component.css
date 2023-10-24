@@ -1,0 +1,56 @@
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search-option {
+    flex-basis: calc(20% - 20px); /* Adjust the width as needed */
+    margin-right: 10px;
+  }
+  
+  .price-search {
+    flex-basis: calc(40% - 20px); /* Adjust the width as needed */
+    margin-right: 10px;
+  }
+  
+  .search{
+    margin-top: 20px;
+  }
+  
+  /* CSS for adjusting spacing and positioning */
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-options {
+    display: flex;
+    gap: 10px; /* Decreased gap between search options */
+  }
+  
+  .filter-option {
+    /* Moved filter option to the right by using margin-left */
+    margin-left: auto;
+  }
+  .image{
+    width: 300px;
+    height: 180px;
+  }
+  
+  .text{
+    color: white;
+  }
+  .star-rating {
+    font-family: 'Arial', sans-serif; /* Change to your chosen font */
+    font-size: 24px; /* Adjust the size as needed */
+    margin-top: 0;
+    color: gold;
+  }
+  .transparent-table {
+    background-color: transparent;
+  }
+  

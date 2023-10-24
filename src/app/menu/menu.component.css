@@ -1,0 +1,201 @@
+/* menu.component.css */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+/* Add this CSS to your existing styles */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    width: 250px;
+    z-index: 1;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s;
+  }
+  /* Add this CSS to your menu.component.css file or your global styles */
+  /* Display icons in a single column */
+/* Display icons in a single column with left margin */
+.menu-icon {
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow-y: auto; /* Add vertical scrollbar if necessary */
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-bottom: 10px; /* Adjust the left margin value as needed */
+}
+.menu-icon-item {
+  margin-right: 20px; /* Adjust the margin-right value as needed */
+  display: block; /* Display icons as block elements to ensure margin works */
+}
+
+/* Adjust the spacing for smaller screens if necessary */
+@media (max-width: 768px) {
+  .menu-icon-item {
+    margin-right: 20px; /* Adjust for smaller screens */
+  }
+}
+.menu-icon.transparent-button i.menu-icon-item {
+  margin-right: 20px; /* Adjust the margin-right value as needed */
+}
+
+/* Adjust the spacing for smaller screens if necessary */
+@media (max-width: 768px) {
+  .menu-icon.transparent-button i.menu-icon-item {
+    margin-right: 10px; /* Adjust for smaller screens */
+  }
+}
+
+/* Add margin-bottom to create spacing between icons */
+.menu-icon-item {
+  margin-bottom: 20px; /* Adjust the margin-bottom value as needed */
+  display: inline-block; /* Display icons in a line */
+}
+
+/* Adjust the spacing for smaller screens if necessary */
+@media (max-width: 768px) {
+  .menu-icon-item {
+    margin-bottom: 150px; /* Adjust for smaller screens */
+  }
+}
+
+
+  
+.menu-icon {
+  text-align: center;
+}
+.menu-button-icon {
+  margin-right: 10px; /* Adjust the margin-right value as needed */
+}
+.menu-icon-item {
+  margin-right: 10px; /* Adjust the margin-right value as needed */
+}
+
+/* Adjust the spacing for smaller screens if necessary */
+@media (max-width: 768px) {
+  .menu-icon-item {
+    margin-right: 5px; /* Adjust for smaller screens */
+  }
+}
+
+
+/* Menu Bar Styles */
+#menu {
+  position: fixed; /* Fixed position at the top of the page */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  background-color:transparent; /* Background color of the menu bar */
+  /* Add other menu bar styles */
+}
+
+/* Content Area Styles */
+#content {
+  margin-top: 0px; /* Adjust this margin to match the menu bar's height */
+  /* Content area starts below the menu bar */
+  /* Add other content styles */
+}
+.transparent-button {
+    background-color: transparent;
+    border: none;
+    color: inherit; /* Optionally, inherit text color */
+    cursor: pointer; /* Add a pointer cursor on hover to indicate interactivity */
+    padding: 0; /* Optionally, remove padding to reduce space */
+    outline: none; /* Remove the default focus outline */
+  }
+  .transparent-button {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    text-align: center; /* Center text horizontally */
+    width: 100px; /* Adjust the width as needed */
+  }
+  
+  .transparent-button i {
+    font-size: 24px; /* Increase the icon size as needed */
+    margin-bottom: 5px; /* Add some spacing between icons */
+  }
+  
+  
+#menu i {
+    font-size: 24px;
+    background-color: transparent; /* Adjust the font-size as needed */
+  }
+  .fa {
+    background-color: transparent !important;
+    color: inherit !important;
+  }
+  #menu .fas {
+    background-color: transparent !important;
+  }
+  /* You can also style individual icons if needed */
+  #menu .fas.fa-bed {
+    font-size: 28px; 
+    background-color: transparent !important;/* Adjust the font-size for specific icons */
+  }
+
+  
+  #content {
+    margin-left: 0;
+    transition: 0.3s;
+  }
+  
+  #sidebar.active {
+    left: 0;
+  }
+  
+  /* Rest of your existing CSS styles */
+  
+  
+  .sidebar-header {
+    text-align: center;
+    background-color: #222;
+  }
+  
+  .sidebar-header h3 {
+    color: white;
+  }
+  
+  ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #444;
+  }
+  
+  ul.components li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: white;
+    text-decoration: none; /* Remove underline */
+  }
+  
+  ul.components li a i {
+    margin-right: 10px; /* Add space between icon and text */
+  }
+  
+  ul.components li a:hover {
+    background-color: #555;
+    color: white;
+  }
+  
+  .btn-primary {
+    margin: 20px;
+  }
+  
+  /* Media query for responsiveness */
+  @media (max-width: 768px) {
+    #sidebar {
+      left: -250px;
+    }
+  
+    #sidebar.active {
+      left: 0;
+    }
+  
+    #content {
+      margin-left: 0;
+    }
+  }
+  

@@ -1,0 +1,34 @@
+
+  <div class="register-card" style="background-color:rgb(243, 233, 233);;
+  box-shadow: 10px 10px 5px 5px rgb(231, 243, 248);">
+    <div class="profile-img-card">
+      <img class="profile-img-card" src="assets/img/hotelImage.jfif" />
+    </div>
+    <div class="profile-name-card">
+     <h2 class="text-center">Edit Room Details</h2>
+    </div>
+    <form class="form-signup" (ngSubmit)="onSubmit()">
+      <label for="email">RoomNo</label>
+      <input type="email" id="email" name="email" [(ngModel)]="room.roomId" required readonly>
+  
+      <label for="facilities">Facilities</label>
+      <input type="text" id="facilities" name="facilities" [(ngModel)]="room.facilities" required readonly>
+  
+      <label for="photo">Photo</label>
+      <input type="text" id="photo" name="photo" [(ngModel)]="room.photoUrl" required>
+
+      <label for="adults">Adults</label>
+      <input type="number" id="adult" name="adult" [(ngModel)]="room.adultsCount" required>
+      <label for="child">Child</label>
+      <input type="number" id="child" name="child" [(ngModel)]="room.childCount" required>
+
+      <label for="price">Price</label>
+      <input type="number" id="price" name="price" [(ngModel)]="room.price" required>
+      <label for="rating">Rating</label>
+      <input type="number" id="rating" name="rating" [(ngModel)]="room.rating" required>
+  
+      <button type="submit" class="btn btn-success">Save</button>
+    </form>
+    
+  </div>
+  

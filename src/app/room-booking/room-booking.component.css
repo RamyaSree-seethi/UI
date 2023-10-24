@@ -1,0 +1,82 @@
+/* booking.component.css */
+
+.register-card {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #F7F7F7;
+  margin: 0 auto 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.profile-img-card img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px;
+  display: block;
+  border-radius: 50%;
+}
+
+.profile-name-card {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 3px 0 10px;
+}
+
+.form-signup {
+  text-align: left;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between; /* Distribute columns evenly */
+}
+
+.col {
+  width: 48%; /* Adjust column width as needed */
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  color: #333;
+  font-weight: bold;
+}
+
+.form-control {
+  height: 30px;
+  font-size: 14px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 8px;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: rgb(104, 145, 162);
+  outline: none;
+  box-shadow: 0 0 5px rgba(104, 145, 162, 0.5);
+}
+
+.btn-signup {
+  font-weight: 700;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  background: rgb(104, 145, 162);
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-signup:hover {
+  background-color: rgb(12, 97, 33);
+}

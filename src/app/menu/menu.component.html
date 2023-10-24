@@ -1,0 +1,31 @@
+<!-- Menu Bar -->
+<div id="menu">
+  <button class="menu-icon transparent-button" (click)="toggleSidebar()">
+    <ng-container *ngFor="let buttonIcon of menuButtonIcons">
+      <i [ngClass]="buttonIcon" class="menu-button-icon"></i>
+    </ng-container>
+  </button>
+
+  <!-- Your menu content goes here -->
+  <nav id="sidebar" [ngClass]="{'active': isSidebarOpen}">
+    <div class="sidebar-header">
+      <h3>Menu</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+      <!-- Menu items with icons shown all the time -->
+      <li class="nav-item" *ngFor="let menuItem of menuItems">
+        <a class="nav-link" [routerLink]="menuItem.routerLink" (click)="toggleSidebar()" (click)="menuItem.clickHandler && menuItem.clickHandler()">
+          <i [ngClass]="menuItem.iconClass"></i>
+          {{ menuItem.label }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<!-- Content Area -->
+<main id="content">
+  <!-- Page content goes here -->
+  <!-- You can use Angular router to load different components here -->
+</main>

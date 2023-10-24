@@ -1,0 +1,18 @@
+/* CSS to reduce button size */
+.btn-sm {
+    padding: 0.25rem 0.5rem; /* Adjust padding to change button size */
+    font-size: 0.875rem; /* Adjust font size as needed */
+  }
+  
+  /* CSS to place button text on the same line */
+  .input-group-append .btn {
+    white-space: nowrap;
+  }
+  
+  /* Optional: Adjust spacing between select and button */
+  .input-group {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  .filter{
+    width:100px
+  }

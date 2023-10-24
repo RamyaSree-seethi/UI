@@ -1,0 +1,36 @@
+<div class="container">
+    <h4 class="text-center my-3">Feedbacks From Customers</h4>
+    <div class="form-group">
+        <label for="filterRating">Filter by Rating:</label>
+        <select id="filterRating" name="filterRating" [(ngModel)]="selectedRating" class="form-control filter" (change)="filterReviews()">
+          <option value="">All Ratings</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      
+    <table class="table">
+        <thead>
+          <tr>
+            <th>User Name</th>
+            <th>RoomNo.</th>
+            <th>Rating</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let review of reviews">
+            <td>{{ review.userName }}</td>
+            <td>{{ review.roomId }}</td>
+            <td>{{ review.rating }}</td>
+            <td>{{ review.comment }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+
+  

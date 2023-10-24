@@ -1,0 +1,56 @@
+<div class="container">
+  <h2 class="text-center my-3">Your Bookings</h2>
+  <div class="container my-3">
+    <div class="row mb-3">
+      <div class="col-md-2">
+        <label for="roomNumberFilter" class="form-label">Room Number:</label>
+        <input type="text" class="form-control" id="roomNumberFilter" [(ngModel)]="roomNumberFilter">
+      </div>
+      <div class="col-md-2">
+        <label for="checkInDateFilter" class="form-label">Check-in Date:</label>
+        <input type="date" class="form-control" id="checkInDateFilter" [(ngModel)]="checkInDateFilter">
+      </div>
+      <div class="col-md-2">
+        <label for="checkOutDateFilter" class="form-label">Check-out Date:</label>
+        <input type="date" class="form-control" id="checkOutDateFilter" [(ngModel)]="checkOutDateFilter">
+      </div>
+    </div>
+    
+  </div>
+  
+  
+
+
+<table class="table table-striped my-5">
+  <thead>
+    <tr>
+      <th>Booking ID</th>
+      <th>Room ID</th>
+      <th>Check-in Date</th>
+      <th>Check-out Date</th>
+      <th>Price</th>
+      <th>ModifyBooking</th>
+     <th>CancelBooking</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let booking of filteredBookings">
+      <td>{{ booking.bookingId }}</td>
+      <td>{{ booking.roomId }}</td>
+      <td>{{ booking.checkInDate | date:'dd/MM/yy' }}</td>
+      <td>{{ booking.checkOutDate | date:'dd/MM/yy' }}</td>
+    
+      <td>{{ booking.price }}</td>
+
+      <td>
+        <button class="btn btn-primary" [routerLink]="['/editBooking', booking.bookingId]" [disabled]="!canEdit(booking)">ModifyBooking</button>
+        
+      </td>
+      <td>
+        <button  class="btn btn-danger" *ngIf="canDelete(booking)" (click)="deleteBooking(booking.bookingId)">CancelBooking</button>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
